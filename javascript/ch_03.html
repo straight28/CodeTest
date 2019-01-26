@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+
+    //1.
+    // var min=prompt("당신의 하루 통화량은 몇 분 인가요? ","-555");
+    // if(min>60){
+    //     document.write("많이 사용하는 편이군요","<br>")}
+    // document.write("끄읕 !");
+
+    //2.
+    // var result = confirm("정말로 회원탈퇴를 하시겠습니까?");
+    //     if (result) {
+    //         documet.write("탈퇴 완료");
+    //     }
+    //     else {
+    //         document.write("탈퇴실패");
+    //     }
+
+    //3.
+    // var id = "test";
+    // var pass = "1234";
+
+    // var user_id = prompt("아이디를 입력하세요", "");
+    // var user_pw = prompt("비밀번호를 입력하세요", "");
+
+    // if (id == user_id) {
+    //     if (pass == user_pw) {
+    //         document.write(user_id + "님 방가방가");
+    //     } else {
+    //         alert("비밀번호가 일치하지 않습니다");
+    //         location.reload();
+    //     }
+    // } else {
+    //     alert("아이디가 일치하지 않습니다");
+    //     location.reload();
+    // }
+
+    //4.
+
+    var site = prompt("네이버, 다음, 구글, 중 즐겨 사용하는 포털사이트는?","");
+    var url;
+
+    switch(site) 
+    {
+        case "구글": url="www.google.com";
+        break;
+
+        case "네이버": url="www.naver.com";
+        break;
+
+        case "다음": url="www.daum.net";
+        break;
+
+        default: alert("보기에 없는 사이트 입니다.");
+    }
+
+    if(url){
+        location.href="https://"+url;
+    }
+
+
+
+
+
+
+</script>
+
+
+<body>
+
+</body>
+
+</html>
