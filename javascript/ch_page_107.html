@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<script>
+
+    var greenArr = new Array("교대","방배","강남");
+    var yellowArr = ["미금","정자","수서"];
+    console.log(yellowArr);
+
+    greenArr.splice(2,1,"서초", "역삼");
+    console.log(greenArr);
+
+    var data1 = yellowArr.pop();
+    console.log(data1);
+    var data2 = yellowArr.push();
+    console.log(data2);
+
+    yellowArr.push(data2);
+    console.log(yellowArr);
+
+    yellowArr.unshift(data1);
+    console.log(yellowArr);
+
+
+
+</script>
+<body>
+    
+</body>
+</html>
