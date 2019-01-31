@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+
+var addNum = 0;
+var subNum = 1000;
+
+var auto_1 = setInterval(function(){
+    addNum++;
+    console.log("addNum : "+addNum);
+},3000);
+
+
+var auto_2 = setInterval(function(){
+    subNum--;
+    console.log("addNum : "+subNum);
+},3000);
+
+
+</script>
+<body>
+
+    <button onClick="clearInterval(auto_1)">증가정지</button>
+    <button onClick="clearInterval(auto_2)">감소정지</button>
+    
+</body>
+</html>
