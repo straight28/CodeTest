@@ -7,13 +7,22 @@
     <title>Document</title>
 </head>
 <script>
-
+    var coworkers ={
+        "programmer" : "min",
+        "designer" : "eun"
+    };
 </script>
 <body>
 
     <input type="button" value="good" onClick="alert('good')">
     <input type="text" onkeydown="alert('키다운')">
 
-    
+    <script>
+        for(var key in coworkers){
+            document.write(key+' : '+coworkers[key]+'<br>');
+        }
+        
+    </script>
+
 </body>
 </html>
