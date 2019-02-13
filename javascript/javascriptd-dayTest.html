@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<script>
+
+        var timer = setInterval (dayGap, 6000);
+        
+        function dayGap(){
+            var now = new Date();
+            var then = new Date("February 01,2018");
+            
+            var gap = now.getTime() - then.getTime();
+            gap = Math.ceil(gap / (1000 * 60 * 60 * 24));
+            var test = "<a href=#>"+ gap +"</a>";
+            // document.write("acg 만난지 "+gap+"일");
+            // document.alert(test);
+            document.getElementById("date1").innerHTML = test;
+        }
+
+</script>
+<body>
+
+    <p id="date1"></p>
+
+</body>
+</html>
