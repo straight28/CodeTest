@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    // window.onload = function timer(){
+    //     var color = "#"+Math.round(Math.random() * 0xFFFFFF).toString(16);
+    //     document.getElementById("btnn").style.background = color;
+        
+    // }
+  start = setInterval(
+    window.onload = function timer(){
+        var color = "#"+Math.round(Math.random() * 0xFFFFFF).toString(16);
+        document.getElementById("btnn").style.background = color;
+        
+    }
+    );
+
+    function stop(){
+        clearInterval(start);
+    }
+    
+
+</script>
+<body>
+
+    <div>
+        <a id="btnn" style="padding: 300px;" onclick="stop()" class="btn">버튼 하나</a>
+    </div>
+</body>
+</html>
