@@ -41,6 +41,15 @@
             }
         }
 
+///jquery fadeIn & fadeOut        
+	$(document).ready(function (){
+		setInterval(function(){
+			$("#btnn").fadeOut(function(){
+				$(this).fadeIn();
+			});
+		}, 100)
+	});
+
 
 </script>
 <body>
