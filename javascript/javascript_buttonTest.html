@@ -12,18 +12,35 @@
     //     document.getElementById("btnn").style.background = color;
         
     // }
-  start = setInterval(
-    window.onload = function timer(){
-        var color = "#"+Math.round(Math.random() * 0xFFFFFF).toString(16);
-        document.getElementById("btnn").style.background = color;
-        
-    }
-    );
 
-    function stop(){
-        clearInterval(start);
-    }
+    // 랜덤으로 색이 5초동안 변동하도록
+//   start = setInterval(
+//     window.onload = function timer(){
+//         var color = "#"+Math.round(Math.random() * 0xFFFFFF).toString(16);
+//         document.getElementById("btnn").style.background = color;
+        
+//     }, 5000
+//     );
+
+//     function stop(){
+//         clearInterval(start);
+//     }
     
+    /// 2가지 색을 2초동안 변동하게 
+                toggle_color("#61beb3", "#90a2c6", 4000, 2000);
+
+        function toggle_color(color1, color2, cycle_time, wait_time) {
+
+            setInterval(function first_color() {
+                document.getElementById("btnn").style.background = color1;
+                setTimeout(change_color, wait_time);
+            }, cycle_time);
+
+            function change_color() {
+                document.getElementById("btnn").style.background = color2;
+            }
+        }
+
 
 </script>
 <body>
