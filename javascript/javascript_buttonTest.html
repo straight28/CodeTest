@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    // window.onload = function timer(){
+    //     var color = "#"+Math.round(Math.random() * 0xFFFFFF).toString(16);
+    //     document.getElementById("btnn").style.background = color;
+        
+    // }
+
+    // 랜덤으로 색이 5초동안 변동하도록
+//   start = setInterval(
+//     window.onload = function timer(){
+//         var color = "#"+Math.round(Math.random() * 0xFFFFFF).toString(16);
+//         document.getElementById("btnn").style.background = color;
+        
+//     }, 5000
+//     );
+
+//     function stop(){
+//         clearInterval(start);
+//     }
+    
+    /// 2가지 색을 2초동안 변동하게 
+                toggle_color("#61beb3", "#90a2c6", 4000, 2000);
+
+        function toggle_color(color1, color2, cycle_time, wait_time) {
+
+            setInterval(function first_color() {
+                document.getElementById("btnn").style.background = color1;
+                setTimeout(change_color, wait_time);
+            }, cycle_time);
+
+            function change_color() {
+                document.getElementById("btnn").style.background = color2;
+            }
+        }
+
+///jquery fadeIn & fadeOut        
+	$(document).ready(function (){
+		setInterval(function(){
+			$("#btnn").fadeOut(function(){
+				$(this).fadeIn();
+			});
+		}, 100)
+	});
+
+
+// ------------------------------
+// 마지막으로 적용한 방법
+window.onload = function () {
+			//window.onload = function 은 브라우져 실행시 자동 실행
+			var now = new Date();
+			var then = new Date("<%=reg_data1 %>");
+
+			var gap = now.getTime() - then.getTime();
+			gap = Math.ceil(gap / (1000 * 60 * 60 * 24));
+			var test = " <span>&nbsp;" + "&nbsp;ACG-Day&nbsp;" + gap + " 일  </span>";
+			// document.write("acg 만난지 "+gap+"일");
+			// document.alert(test);
+			document.getElementById("date1").innerHTML = test;
+
+			if ("<%=strCompanyAttend %>" != "N") {
+				$(document).ready(function () {
+					setInterval(function () {
+						$("#btnn").fadeOut(function () {
+							$(this).fadeIn(function () {
+								$(this).css('background', 'green');
+							});
+						});
+					}, 100)
+				});
+			}
+
+		}
+
+
+
+
+</script>
+<body>
+
+    <div>
+        <a id="btnn" style="padding: 300px;" onclick="stop()" class="btn">버튼 하나</a>
+    </div>
+</body>
+</html>
