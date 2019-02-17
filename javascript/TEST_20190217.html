@@ -4,14 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <title>Java script</title>
 </head>
+<!-- jQuery의 스타일 작업은 CSS를 그대로 모방 -->
 <script>
-
-
+$(document).ready(function(){
+    // 브라우저를 한번 읽어들이는 이벤트
+});
 </script>
+<style>
+     /* = : 좌항과 우항이 같을 때
+     ^= : 시작 문자열
+     $= : 끝 문자열 
+     *= : 포함 문자열 
+     */
+    /* "[name^=value]" */
+</style>
 <body>
+    <div class="box" id="box1">박스1</div>
+    <div class="box" id="box2">박스2</div>
+    <div class="box" id="box3">박스3</div>
 
-    
+    <script>
+        // $(노드).css({속성1:값1, 속성2:값2});
+        $(".box").css({"background-color":"blue"});
+        // $(노드).이벤트(function(){실행문});
+        // 이벤트란 웹에서 이루어질 수 있는 사건을 말함
+        // 핸들러: 이벤트 명령어, 이벤트가 발생되는 명령어
+        $("#box1").click(function(){
+            $("#box1").css({"background-color":"green"});
+        });
+
+    </script>
 </body>
 </html>
