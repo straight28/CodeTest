@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../Js/moment-with-locales.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //한글
+        moment.locale('ko');
+        
+        console.log( moment().format());    
+        console.log( moment().format('YYYY MMMM Do'));    
+        console.log( moment().format('YYYY MM DD hh:mm:ss a')); 
+        console.log( moment("20000101","YYYYMMDD").fromNow()); // 지난시간 표시
+        console.log( moment().startOf('day').fromNow()); // 지난시간 표시
+        console.log( moment("20190220 01:19","YYYYMMDD hh:mm").fromNow());
+
+        
+        
+        
+    </script>
+</body>
+</html>
