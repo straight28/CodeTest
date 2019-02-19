@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+
+        // alert("경고창")
+        // confirm("확인창")
+        // prompt("알림창")
+
+            // 변수의 유형 확인 typeof
+        var strHello = "안녕하세요";
+        document.write(typeof strHello);
+        document.write("<br/>");
+
+        //초기화 되지 않는 변수 - > undefined
+        //아무것도 아닌 값 ->   NULL
+
+        //배열
+        var arr=[];
+        arr[0] ="하이";
+        arr[1] ="Hello";
+        console.log(arr);
+
+        //객체
+        var obj = {
+            Key1: "값3",
+            Key2: "값2",
+            Key3: "값1",
+        };
+        console.log(obj);
+        console.log(obj.Key2);
+
+
+        //10진수 10을 2진수로 변경하면 1010
+        var num = 10;
+        document.write(num.toString(2));
+        document.write("<br/>");
+        
+
+        //2인수 1010을 10진수로 변경하면 10
+        //var str = "1010";
+        //document.write(parseInt(str, 2));
+
+        // var name;
+        // name = "캡틴 아메리카";
+        // alert(name.substring(1, 3));
+
+            // document.write("1-3사이의 값을 입력하세요");
+            // var num = parseInt(prompt("1-3사이 값을 입력하시요"));
+
+            // switch(num){
+            //     case 1: 1
+            //     document.write("1입력");
+            //     break;
+            //     case 2: 2
+            //     document.write("2입력");
+            //     break;
+            //     case 3: 3
+            //     document.write("3입력");
+            //     break;
+            //     case 4: 4
+            //     document.write("4입력");
+            //     break;
+            // }
+
+            // for(i = 0; i<10; i++){
+            //     for(j=1; j<=9; j++){
+            //         document.write(i +" * "+ j +" = " +i*j+"<br/>")
+            //     }
+            //     document.write("<br/>")
+            // }
+
+
+            function FunArray(func, arr){
+                document.write("[3] <br/>");
+                for(var i in arr){
+                    func(arr[i]);
+                }
+            }
+            // 1.기본형태
+            var arr1 = [1,2,3];
+            FunArray(alert, arr1);
+            // 2.Function 개체
+            var func1 = new Function("e", "alert(e)");
+            FunArray(func1, arr1);
+            // 3.익명 개체
+            FunArray(function (e){
+                alert(e);
+            }, arr1);
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+    <div id="output"></div>
+    
+    <script>
+        document.getElementById('output').innerHTML="하이";
+    
+    </script>
+</body>
+</html>
