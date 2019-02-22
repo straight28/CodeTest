@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script> 
+
+//moment.js 사용하여서 진행.
+//시간별로 비교 테스트진행
+
+
+function GetWorkStart(){
+		moment.locale('ko');
+		// var today = new Date();
+		// console.log('지금날짜는? 11',today)
+
+		//var t3 = moment.duration(t2.diff(t1)).asHours();
+		//var t4 = moment.duration(t2.diff(t1)).asMinutes();
+		//var t5 = moment.duration(t1.diff(t2)).asMinutes();
+		//console.log('시간 확인 ',t3);
+		//console.log('분 확인11', t4);
+		
+		// if(confirm("금일 업무를 시작하시겠습니까? \n현재시각 : " + today.getHours() + "시 " + today.getMinutes() + "분 " + today.getSeconds() + "초"),"vbscript"){
+		// 	document.getElementById("btnn").style.background = "#333333";
+		// 	location.href = "/my_menu/getStart.asp"
+		// }
+
+		var now = moment().format('MMM Do, a h:mm:ss ');
+		var fixedTime = moment('오전 08:00:00','a h:mm:ss');	
+		var amTime = moment('오전 10:00:00','a h:mm:ss');
+		var pmTime = moment('오후 02:00:00','a h:mm:ss');
+		var currentTime = moment();	
+
+		if(moment.duration(currentTime.diff(fixedTime)).asMinutes() < '0' ){
+			//8시 이전 출근한 경우_외근인경우
+				if(confirm("현장출근이 맞으십니까?") = true){
+					var check = 1;
+					alert("금일 업무를 시작합니다. \n현재시각 : " + now + " ");
+					document.getElementById("btnn").style.background = "#333333";
+					location.href = "/my_menu/getStart.asp?check="+check
+				}else{
+			//8시 이전 본사 출근인경우
+					var check = 2
+					alert("8시 이전 본사 출근은 8시로 기록됩니다. \n현재시각 : " + now + " ");
+					//로직으로 시작시간 8시로 넣어줘야합니다.
+					document.getElementById("btnn").style.background = "#333333";
+					location.href = "/my_menu/getStart.asp?check="+check
+				}
+		}
+
+			//8시 이후 출근
+		if (moment.duration(currentTime.diff(fixedTime)).asMinutes() > '0' ) {
+			if (moment.duration(currentTime.diff(amTime)).asMinutes() > '0') {
+				//10시 이후 출근일 경우
+				var check = 3;
+				alert("10시 이후 출근으로 지각기록됩니다. \n현재시각 : " + now + " ");
+				//로직으로 지각문구 추가 넣어줘야합니다.
+				document.getElementById("btnn").style.background = "#333333";
+				location.href = "/my_menu/getStart.asp?check="+check;
+			}else if(moment.duration(currentTime.diff(pmTime)).asMinutes() > '0'){
+				//14시 이후 출근이고 오전 근태가 있을 경우
+				var check = 3;
+				alert("14시 이후 출근으로 지각기록됩니다. \n현재시각 : " + now + " ");
+				//로직으로 지각문구 추가 넣어줘야합니다.
+				document.getElementById("btnn").style.background = "#333333";
+				location.href = "/my_menu/getStart.asp?check="+check;
+			}else{
+				if (confirm("금일 업무를 시작하시겠습니까? \n현재시각 : " + now + " ")) {
+				document.getElementById("btnn").style.background = "#333333";
+				location.href = "/my_menu/getStart.asp";
+				}
+			}
+		}
+
+		if (confirm("금일 업무를 시작하시겠습니까? \n현재시각 : " + now + " ")) {
+				document.getElementById("btnn").style.background = "#333333";
+				location.href = "/my_menu/getStart.asp";
+		}
+	}
+
+
+
+
+
+</script>
+
+
+<body>
+    
+</body>
+</html>
