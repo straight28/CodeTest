@@ -1,0 +1,34 @@
+1. 설치 / 제거
+    1-1. SQL Server 다운로드 및 설치
+    1-2. SQL Server 인스턴스명(server명)
+                    -(local)
+                    -(local)\SQLEXPRESS
+
+2. DB 관리 : DB 및 관련 정보가 저장되는 공간
+    2-1. DB이름
+    2-2. DB Size
+    2-3. DB 확장자를 가진다.
+
+3. 로그인 사용자: SQL Server에 접근 가능한 계정
+    - 데이터 베이스 계정 sa
+    - 원격에서 데이터베이스에 접속하고 할 때 필요한 계정(id/pass 및 권한)
+
+4. 원격접속테스트(UDL 파일을 통한 OLE DB설정)
+    -DB연결테스트 및 DB연결 문자열 생성 
+    (SERVER - Data Source, DB - Initial Catalog, UID - UserId, PWD - Password 필요)
+
+5. 테이블: 표 형태로 실제 데이터가 저장되는 공간=> 관계형 DB
+        테이블: 행/열, Row/Column, Record/Field, 튜플/애트리뷰트
+
+6. SQL 구문
+        DDL - 데이터 정의 언어: create/alter/drop
+        DML - 데이터 조작 언어: insert/Select/Update/Delete
+
+7. T-Sql DB내의 프로그래밍 문법
+    Delare, Set, If ..
+
+8. SQL 개체 : Table, View, Index, Function, Transaction, Trigger
+
+9. DTS(데이터 변환 서비스) : 원격 SQL Server <-> 로컬 SQL Server
+
+10. 백업 혹은 복원
