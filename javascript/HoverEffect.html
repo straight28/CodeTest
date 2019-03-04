@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+$(document).ready(function(){
+  $("span").hover(function(){
+    $(this)
+      .addClass("on")
+      .next()
+      .addClass("side")
+      .next()
+      .addClass("side2");
+    $(this)
+      .prev()
+      .addClass("side")
+      .prev()
+      .addClass("side2");
+  }, function() {
+    $("span").removeClass("on");
+    $("span").removeClass("side");
+    $("span").removeClass("side2");
+  });
+});
+
+</script>
+
+<style>
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN_r8OUuhs.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFVZ0e.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UNirkOUuhs.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN7rgOUuhs.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Open Sans ExtraBold'), local('OpenSans-ExtraBold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN8rsOUuhs.ttf) format('truetype');
+}
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 500px;
+          perspective: 500px;
+  background: #191919;
+  color: transparent;
+  font-family: "Open Sans";
+  font-weight: 800;
+  font-size: 8vw;
+  text-transform: uppercase;
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.6);
+}
+span {
+  display: inline-block;
+  cursor: pointer;
+  padding: 0 0.2em;
+  position: relative;
+  transition: all 0.15s linear;
+}
+span.on {
+  color: #fff;
+  -webkit-transform: scale(2.2);
+          transform: scale(2.2);
+  text-shadow: 0 0 1px #ffffff;
+}
+span.side {
+  -webkit-transform: scale(1.65);
+          transform: scale(1.65);
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.85);
+}
+span.side2 {
+  -webkit-transform: scale(1.35);
+          transform: scale(1.35);
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.7);
+}
+
+
+</style>
+<body>
+        <div class="letters">
+                <span>A</span>
+                <span>C</span>
+                <span>G</span>
+                <span>에</span>
+                <span>이</span>
+                <span>시</span>
+                <span>지</span>
+                <span>알</span>
+                <span>!!!</span>
+              </div>
+</body>
+</html>
