@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimal-ui">
+            <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+            <link rel="stylesheet" href="assets/css/style.css">
+            <link rel="stylesheet" href="assets/css/icons.css">
+            <!-- <link rel="stylesheet" href="//cdn.materialdesignicons.com/3.6.95/css/materialdesignicons.min.css"> --> 
+            <script src="assets/js/jquery.min.js"></script>
+            <script src="assets/js/bootstrap.bundle.min.js"></script>
+            <style>
+                input[id="check-main-1"], input[id="check-main-2"], input[id="check-main-3"], input[id="check-main-4"], input[id="check-main-5"] {
+                    display: none;
+                }
+        
+                    input[id="check-main-1"] + label, input[id="check-main-2"] + label, input[id="check-main-3"] + label, input[id="check-main-4"] + label, input[id="check-main-5"] + label {
+                        display: inline-block;
+                        width: 20px;
+                        height: 20px;
+                        border: 1px solid #666666;
+                        cursor: pointer;
+                        color: white;
+                    }
+        
+                    input[id="check-main-1"]:checked + label, input[id="check-main-2"]:checked + label, input[id="check-main-3"]:checked + label, input[id="check-main-4"]:checked + label, input[id="check-main-5"]:checked + label {
+                        color: #666666;
+                    }
+        
+                label {
+                    text-align: center;
+                    vertical-align: central;
+                    font-size: 14px;
+                }
+            </style>
+    </head>
+
+
+        <body>
+
+                <div class="card">
+                        <div class="card-body" style="background-color:#e4e4e4">
+                            <div id="calc-result-panel" style="background-color:white; width:100%; height:90px">
+                                <div id="calc-process"></div>
+                                <div id="calc-result"></div>
+                            </div>
+                            <div id="calc-buttons" class="text-center">
+                                <table style="width:80%;margin-left:25px; margin-right:25px;margin-top:20px">
+                                    <tr>
+                                        <td colspan="2"><button type="button" class="btn btn-secondary btn-lg btn-block" style="background-color:#898989;border-color:#898989">C</button></td>
+                                        <td><button type="button" class="btn btn-secondary btn-lg btn-block" style="background-color:#898989;border-color:#898989">DEL</button></td>
+                                        <td><button type="button" class="btn btn-secondary btn-lg btn-block" style="background-color:#898989;border-color:#898989">/</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width:25%"><button type="button" class="btn btn-secondary btn-lg btn-block" style="background-color:#acacac;border-color:#acacac">7</button></td>
+                                        <td style="width:25%"><button type="button" class="btn btn-secondary btn-lg btn-block" style="background-color:#acacac;border-color:#acacac">8</button></td>
+                                        <td style="width:25%"><button type="button" class="btn btn-secondary btn-lg btn-block" style="background-color:#acacac;border-color:#acacac">9</button></td>
+                                        <td style="width:25%"><button type="button" class="btn btn-secondary btn-lg btn-block" style="background-color:#898989;border-color:#898989">X</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><button type="button" class="btn btn-secondary btn-lg btn-block" style="background-color:#acacac;border-color:#acacac">4</button></td>
+                                        <td><button type="button" class="btn btn-secondary btn-lg btn-block" style="background-color:#acacac;border-color:#acacac">5</button></td>
+                                        <td><button type="button" class="btn btn-secondary btn-lg btn-block" style="background-color:#acacac;border-color:#acacac">6</button></td>
+                                        <td><button type="button" class="btn btn-secondary btn-lg btn-block" style="background-color:#898989;border-color:#898989">-</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><button type="button" class="btn btn-secondary btn-lg btn-block" style="background-color:#acacac;border-color:#acacac">1</button></td>
+                                        <td><button type="button" class="btn btn-secondary btn-lg btn-block" style="background-color:#acacac;border-color:#acacac">2</button></td>
+                                        <td><button type="button" class="btn btn-secondary btn-lg btn-block" style="background-color:#acacac;border-color:#acacac">3</button></td>
+                                        <td><button type="button" class="btn btn-secondary btn-lg btn-block" style="background-color:#898989;border-color:#898989">+</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><button type="button" class="btn btn-secondary btn-lg btn-block" style="background-color:#acacac;border-color:#acacac">0</button></td>
+                                        <td><button type="button" class="btn btn-secondary btn-lg btn-block" style="background-color:#acacac;border-color:#acacac">00</button></td>
+                                        <td><button type="button" class="btn btn-secondary btn-lg btn-block" style="background-color:#898989;border-color:#898989">.</button></td>
+                                        <td><button type="button" class="btn btn-secondary btn-lg btn-block" style="background-color:#898989;border-color:#898989">=</button></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <script>
+                    
+                    
+                    
+                    </script>
+
+
+        </body>
+</html>

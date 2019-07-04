@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+<link href="styles.css" rel="stylesheet">
+<script src="script.js" defer></script>
+
+</head>
+
+
+<body>
+     
+    <div class="calculator-grid" onkeydown='on_key_down()'>
+           
+            <h4><input type="button" data-equals value="계산기 사용"></h4>
+        <div class="output">
+            <div data-previous-operand class="previous-operand"></div>
+            <div data-current-operand class="current-operand"></div>
+        </div>
+
+        <button id="cleanbtn" data-all-clear class="span-two">C</button>
+        <button id="backbtn"  data-delete>Del</button>
+        <button id="dividebtn" data-operation>/</button>
+        <button id="n11"  data-number>1</button>
+        <button id="n22"  data-number>2</button>
+        <button id="n33"  data-number>3</button>
+        <button id="multibtn"  data-operation>*</button>
+        <button id="n44"  data-number>4</button>
+        <button id="n55"  data-number>5</button>
+        <button id="n66"  data-number>6</button>
+        <button id="plusbtn"  data-operation>+</button>
+        <button id="n77"  data-number>7</button>
+        <button id="n88"  data-number>8</button>
+        <button id="n99"  data-number>9</button>
+        <button id="minusbtn"  data-operation>-</button>
+        <button id="commabtn"  data-number>.</button>
+        <button id="n00"  data-number>0</button>
+        <button id="equalbtn" data-equals class="span-two">=</button>
+
+    </div>
+
+
+
+</body>
+</html>
