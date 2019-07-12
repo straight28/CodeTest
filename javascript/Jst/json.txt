@@ -1,0 +1,4 @@
+{
+    "name" : "알라딘",
+    "favorites" : ["자스민", "apple"]
+}
