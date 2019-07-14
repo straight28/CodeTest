@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        
+        // 순수함수
+        function add(a, b){
+            return a + b;
+        }
+
+        console.log( add (10, 5 ));
+        console.log( add (10, 5 ));
+        console.log( add (10, 5 ));
+
+
+
+        // 함수형 프로그램 예시
+         function f4(f1,f2,f3){
+             return f3(f1() + f2());
+         }
+    
+         console.log(
+         f4(
+             function(){return 2;},
+             function(){return 1;},
+             function(a){return a * a;}
+         )
+         );
+    
+    
+    
+    </script>
+
+
+</body>
+</html>
