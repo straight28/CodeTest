@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Ajax Controlling</p>
+
+
+    값 넘기는 방식
+    <button type="button" class="btn btn-sm btn-danger" value="@tester.Id" onclick="deleteTesterConfirm(this, @tester.Id)">삭제</button>
+
+    받는 방식
+    function deleteTesterConfirm(btn, testerId) {
+
+        // TODO Web-API : 지원자 결과 내용이 있는 경우 삭제 불가
+        // TODO 결과가 없고 미응시 상태일 경우 삭제
+
+        //$.ajax({
+        //    url: '/api/TesterPersonalityTempMark1?testerId=' + testerId,
+        //    type: 'POST',
+        //    contentType: "application/json; charset=utf-8",
+        //    success: function (result) {
+        //        console.log(result);
+        //    },
+        //    error: function (jqXHR) {
+        //        alert("그룹 추가중 오류가 발생했습니다. 다시 시도하세요.");
+        //    }
+        //});
+            
+        이 부분 중요
+        $.get('/api/TesterPersonalityTempMark1?testerId=' + testerId, function (result) {
+            console.log(result)
+            if (result) {
+                alert("이미 응시한 지원자이므로 삭제할 수 없습니다.");
+                return;
+            }
+            $(btn).parents("form:first").submit();
+        });
+    }
+
+    컨트롤러에서 받는 방식
+        public async Task<bool> Get(int testerId)
+        {
+            var count = await _dbContext.TesterPersonalityTempMark1s.CountAsync(c=>c.TesterId == testerId);
+            return count > 0;
+        } 
+
+    리턴값을 result로 받아서 진행
+
+
+    ******** 길게 적었을 때 
+    $.ajax({
+        url: 'api/GetTesterListByGroupId/' + groupId,
+        type: 'GET',
+        contentType: "application/json; charset=utf-8",
+        success: function (result) {
+            console.log(result);
+
+            parseInt(reuslt);
+        },
+        error: function (jqXHR) {
+            alert("그룹 추가중 오류가 발생했습니다. 다시 시도하세요.");
+        }
+    });
+
+    실제로 api 하나다 get , post 하나씩 이지만
+    get을 2개 할 경우 액션 메서드를 통해서 전달
+    //컨트롤러를 통해서가 아닌 액션 메서드를 통해서 전달
+    //대신 위에 //[Route("api/[controller]")]를 지워야 함
+    [HttpGet, Route("api/GetTesterListByGroupId/{groupId}")]
+    public async Task<IActionResult> GetTesterListByGroupId(int groupId)
+    {
+        return Ok();
+    }
+
+    
+
+
+
+
+
+</body>
+
+</html>
