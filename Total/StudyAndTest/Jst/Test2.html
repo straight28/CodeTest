@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>연습들</h2>
+    <p id="demo"></p>
+
+    <script> 
+    
+    // var myInfo = {name:"훗", age:3434, city:"seoul"};
+    // var myJSON = JSON.stringify(myInfo);
+    // x = myInfo.name="잘하자";
+    // document.getElementById("demo").innerHTML = x;
+    // console.log(myJSON);
+    
+    var users =[
+        {id: 1, name:'ID', age: 22},
+        {id: 2, name:'SD', age: 32},
+        {id: 3, name:'FG', age: 55},
+        {id: 4, name:'DG', age: 33},
+        {id: 5, name:'EF', age: 26},
+        {id: 6, name:'XH', age: 42},
+        {id: 7, name:'LJ', age: 44},
+        {id: 8, name:'IU', age: 35},
+        {id: 9, name:'WQ', age: 33},
+    ];
+
+    var temp_users = [];
+
+    for(var i= 0; i< users.length; i++){
+        if(users[i].age >= 30 ){
+            temp_users.push(users[i]); 
+        }
+    }
+    console.log(temp_users);
+
+    var names = [];
+    for(var i =0; i<temp_users.length; i++){
+        names.push(temp_users[i].name);
+    }
+    console.log(names);
+
+
+    function _filter(users, predi){
+        var new_list =[];
+        for(var i = 0; i<users.length; i++){
+            if(predi(users[i])){
+                new_list.push(users[i]);
+            }
+        }
+        return new_list;
+    }
+
+    function _map(list, mapper){
+        var new_list = [];
+        for(var i = 0; i < list.length; i++){
+            new_list.push(mapper(list[i]));
+            }
+        return new_list;
+    }
+
+
+    var over_30 =  _filter(users, function(users) {return users.age >= 30;});
+    //console.log(over_30);
+
+    var names = _map(over_30, function(user){
+        return user.name;
+    })
+
+    console.log(names);
+
+    var under_30 =  _filter(users, function(users) {return users.age < 30;});
+    //console.log(under_30);
+
+    var ages = _map(under_30, function(user){
+        return user.age;
+    })
+
+    console.log(ages);
+
+    console.log(
+        _filter(users, function(users) {return users.age < 30;})
+    );
+
+    console.log("1" === 1 );
+
+
+
+    </script>
+
+
+
+
+
+</body>
+</html>
